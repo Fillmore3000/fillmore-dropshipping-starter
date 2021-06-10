@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "tailwindcss/tailwind.css";
 import "../styles/app.css";
 
