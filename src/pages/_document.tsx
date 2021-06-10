@@ -15,6 +15,8 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
+         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         </Head>
         <body className="antialiased">
           <Main />

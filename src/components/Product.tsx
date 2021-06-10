@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Image from "next/image";
-
+import {Image} from 'cloudinary-react';
 import useWishlistDispatch from "../hooks/useWishlistDispatch";
 import useWishlistState from "../hooks/useWishlistState";
 

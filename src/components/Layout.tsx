@@ -1,7 +1,13 @@
 import Link from "next/link";
-
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import useWishlistState from "../hooks/useWishlistState";
 import useSnipcartCount from "../hooks/useSnipcartCount";
+import { Navbar,Nav } from 'react-bootstrap';
+import  Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Layout = ({ children }) => {
   const { hasItems } = useWishlistState();
@@ -10,40 +16,31 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <header className="py-6 md:py-12">
+      <header className="">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between">
-            <div className="md:w-1/3">
-              <nav className="flex items-center justify-start space-x-3 md:space-x-6">
-                <Link href="/about">
-                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
-                    About
-                  </a>
-                </Link>
-                <Link href="/terms-of-sale">
-                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
-                    Terms of Sale
-                  </a>
-                </Link>
-              </nav>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
-              <Link href="/">
-                <a className="flex items-center text-gray-900">
-                  <div className="rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                    <img
-                      className="w-full h-full fill-current"
-                      src="/logo.svg"
-                      role="presentation"
-                    />
-                  </div>
-                  <span className="text-lg font-medium">
-                    Headless Dropshipping Starter
-                  </span>
-                </a>
-              </Link>
-            </div>
-            <div className="md:w-1/3 flex items-center justify-end space-x-3 -mr-2.5">
+        <Navbar bg="white" variant="light" expand="lg">
+                                <Navbar.Brand href="#home"><Link href="/">
+                                <a className="flex items-center text-gray-900">
+                                <div className="flex items-center justify-center ml-6">
+                                <img
+                                className="fill-current"
+                                src="https://res.cloudinary.com/fillmore-xr-limited/image/upload/v1620685489/main-logo_liqxfy.png"
+                                role="presentation"
+                                style={{ width:'270px'}}
+                                /></div></a>
+                                </Link></Navbar.Brand>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav">
+                                    <Nav className="mr-auto">
+                                    <Nav.Link href="/">HOME</Nav.Link>
+                                    <Nav.Link href="/services">SERVICES</Nav.Link>
+                                    <Nav.Link href="/gallery">GALLERY</Nav.Link>
+                                    <Nav.Link href="/blog">BLOG</Nav.Link>
+                                    <Nav.Link href="/nft">NFT's</Nav.Link>
+                                    <Nav.Link href="/contact">CONTACT</Nav.Link>
+                                 
+                                    </Nav>
+                                    <div className="flex items-center space-x-3 -mr-2.5">
               <button
                 className="snipcart-customer-signin appearance-none px-2 text-gray-800 hover:text-blue-600 rounded-md cursor-pointer focus:outline-none focus:text-blue-600 transition relative"
                 aria-label="User login"
@@ -92,39 +89,71 @@ const Layout = ({ children }) => {
                 </svg>
               </button>
             </div>
-          </div>
+                                </Navbar.Collapse>
+                            </Navbar>
         </div>
       </header>
-      <main className="py-6 md:py-12">
+      <main className="">
         <div className="max-w-6xl mx-auto px-6">{children}</div>
       </main>
-      <footer className="max-w-6xl mx-auto px-6">
-        <div className="py-6 border-t border-gray-100 text-center flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-600 text-sm">
-            Powered by
-            <a
-              href="https://headlessdropshipping.com"
-              title="Learn more about how this site was made"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-0.5 text-gray-800 hover:text-blue-600"
-            >
-              Headless Dropshipping Starter
-            </a>
-          </p>
-          <nav className="flex items-center justify-end space-x-3 md:space-x-6">
+      <footer className=" footer">
+        <div className=" items-center ">
+        <Container>
+        <Row noGutters>
+          <Col xs={12} sm={4} md={4}>  
+        <img src="https://res.cloudinary.com/fillmore-xr-limited/image/upload/v1620685489/main-logo_liqxfy.png" alt="logo" className="App-logo" style={{ width:'270px', padding:'0px 15px 15px 0px'}}/></Col>
+        <Col xs={12} sm={4} md={4}>  
+        <nav className=" " style={{  padding:'15px 0px'}}>
+            <Link href="/">
+              <a className="text-whitey-800 hover:text-blue-600 p-1 transition text-sm">
+                HOME
+              </a>
+            </Link>
+            <Link href="/services">
+              <a className="text-white-800 hover:text-blue-600 p-1 transition text-sm">
+                SERVICES
+              </a>
+            </Link>
+            <Link href="/gallery">
+              <a className="text-white-800 hover:text-blue-600 p-1 transition text-sm">
+                GALLERY
+              </a>
+            </Link>
+            <Link href="/blog">
+              <a className="text-whitey-800 hover:text-blue-600 p-1 transition text-sm">
+                BLOG
+              </a>
+            </Link>
+            <Link href="/nft">
+              <a className="text-white-800 hover:text-blue-600 p-1 transition text-sm">
+                NFT's
+              </a>
+            </Link><br/><br/>
+            <Link href="/contact">
+              <a className="text-whitey-800 hover:text-blue-600 p-1 transition text-sm">
+                CONTACT 
+              </a>
+            </Link>
             <Link href="/about">
-              <a className="text-gray-800 hover:text-blue-600 p-1 transition text-sm">
-                FAQS
+              <a className="text-whitey-800 hover:text-blue-600 p-1 transition text-sm">
+                ABOUT US
               </a>
             </Link>
             <Link href="/terms-of-sale">
-              <a className="text-gray-800 hover:text-blue-600 p-1 transition text-sm">
-                Terms of Sale
+              <a className="text-white-800 hover:text-blue-600 p-1 transition text-sm">
+                TERMS OF SALES
               </a>
-            </Link>
+            </Link><br/>
+
           </nav>
+        </Col>
+        <Col xs={12} sm={4} md={4}>  
+          <p className="center" style={{ color: '#fff', fontWeight:'bold', padding:'0px 0px 0px 10px' }}>FOLLOW ME ON:</p>
+          <a href="https://www.linkedin.com/in/henryapaw/" style={{ color: '#fff',  padding:'0px 0px 0px 10px' }}>< LinkedInIcon className="icon"/></a> <a href="https://www.instagram.com/hennyx3000/" style={{ color: '#fff',  padding:'0px 0px 0px 10px' }}><InstagramIcon className="icon"/></a> <a href="https://twitter.com/HennyX3000"  style={{ color: '#fff',  padding:'0px 0px 0px 10px' }}><TwitterIcon className="icon"/></a>
+          </Col></Row></Container>
+        
         </div>
+        <p className="center" style={{ color: '#fff', fontSize:'11px',padding:'20px 0px 0px 10px'}}>©FILLMORE-XR.COM. ALL COPYRIGHT SOLELY BELONGS TO FILLMORE XR LTD.</p>
       </footer>
     </>
   );
